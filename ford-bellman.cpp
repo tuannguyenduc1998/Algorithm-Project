@@ -7,12 +7,10 @@ using namespace std;
  
 struct Edge
 {
-    // This structure is equal to an edge. Edge contains two end points. These edges are directed edges so they
-	//contain source and destination and some weight. These 3 are elements in this structure
+   
     int source, destination, weight;
 };
  
-// a structure to represent a connected, directed and weighted graph
 struct Graph
 {
     int V, E;
@@ -82,10 +80,6 @@ void BellmanFord(struct Graph* graph, int source)
         }
     }
  
-    // Actually upto now shortest path found. But BellmanFord checks for negative edge cycle. In this step we check for that
-    // shortest distances if graph doesn't contain negative weight cycle.
- 
-    // If we get a shorter path, then there is a negative edge cycle.
     for (i = 0; i < E; i++)
     {
         int u = graph->edge[i].source;
@@ -116,7 +110,7 @@ int main()
 	cout<<"Enter your source vertex number\n";
 	cin>>S;
  
-    struct Graph* graph = createGraph(V, E);    //calling the function to allocate space to these many vertices and edges
+    struct Graph* graph = createGraph(V, E);   
  
     int i;
     for(i=0;i<E;i++){
